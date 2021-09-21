@@ -1,5 +1,4 @@
 const express = require('express');
-const cors = require('cors');
 const compression = require('compression');
 const { check, validationResult } = require('express-validator');
 
@@ -9,11 +8,9 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(cors());
-
 if (process.env.NODE_ENV === 'production') {
     app.use(compression);
-	app.use(express.static('client/build'));
+	app.use(express.static(path.join(__dirname,'client/build')));
 }
 // app.get('*', (request, response) => {
 // 	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
