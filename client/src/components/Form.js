@@ -25,6 +25,7 @@ export const Form = () => {
       method: "get",
     })
       .then(() => {
+          console.log("THe provided UserName is compliant")
         alert("THe provided UserName is compliant");
       })
       .catch((error) => {
@@ -35,15 +36,8 @@ export const Form = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Grid container alignItems="center" spacing="2" justify="center" direction="column">
-        <Box
-          component="form"
-          sx={{
-            "& > :not(style)": { m: 1 },
-          }}
-          noValidate
-          autoComplete="off"
-        >
+      <Grid container alignItems="center" direction="column">
+        <Box>
           <h1>Check the Compliance of your username</h1>
           <Grid item>
             <TextField
