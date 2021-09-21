@@ -1,6 +1,7 @@
 const express = require('express');
 const compression = require('compression');
 const { check, validationResult } = require('express-validator');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 5000;
