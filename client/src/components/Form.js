@@ -39,7 +39,7 @@ export const Form = () => {
       })
       .catch((error) => {
         console.error("API Error" + error.response.status);
-        if(error.response.status===400){
+        if(error.response.status==400){
             alert("username is Not Compliant !")
         }
         else{
